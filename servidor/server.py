@@ -10,9 +10,9 @@ def ejecutar_comando(comando):
     elif comando == "abrir_excel":
         os.system("start excel")  # Abre Microsoft Excel
         return "Microsoft Excel abierto."
-    elif comando == "reproducir_musica":
-        os.system("start wmplayer")  # Abre Windows Media Player
-        return "Reproduciendo música en Windows Media Player."
+    elif comando == "abrir_navegador":
+        os.system("start chrome") # Abre un navegador
+        return "Navegador Chrome abierto."
     else:
         return f"Comando no reconocido: {comando}"
 
@@ -33,8 +33,8 @@ async def manejar_conexion(websocket):
 
 async def iniciar_servidor():
     # Solo pasas la función de manejo sin path
-    servidor = await websockets.serve(manejar_conexion, "10.40.11.220", 8765)
-    print("Iniciando servidor en ws://10.40.11.220:8765")
+    servidor = await websockets.serve(manejar_conexion, "192.168.50.4", 8765)
+    print("Iniciando servidor en ws://192.168.50.4:8765")
     await servidor.wait_closed()
 
 # Ejecutar el servidor

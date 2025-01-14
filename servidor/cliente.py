@@ -2,7 +2,7 @@ import asyncio
 import websockets
 
 async def conectar_a_servidor():
-    uri = "ws://10.40.11.220:8765"
+    uri = "ws://192.168.50.4:8765"
     try:
         async with websockets.connect(uri) as websocket:
             print(f"Conectado al servidor en {uri}")
